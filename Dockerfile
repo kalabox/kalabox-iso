@@ -1,7 +1,7 @@
 # Build a custom boot2docker image for kalabox2
 #
 # docker build -t kalabox/boot2docker .
-# docker run --rm kalabox/boot2docker > kalabox-boot2docker.iso
+# docker run --rm kalabox/boot2docker > boot2docker.iso
 #
 
 FROM boot2docker/boot2docker

@@ -43,6 +43,6 @@ You will need to be in a docker-ready environment to do this.
 git clone git@github.com:kalabox/kalabox-boot2docker.git
 cd kalabox-boot2docker
 docker build -t kalabox/boot2docker .
-docker run --rm kalabox/boot2docker > kalabox-boot2docker.iso
+docker run --rm kalabox/boot2docker > boot2docker.iso
 ```
 
