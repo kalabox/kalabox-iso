@@ -14,8 +14,6 @@ things.
 boot2docker destroy
 rm -rf ~/.boot2docker
 rm ~/.ssh/*boot2docker*
-mkdir ~/.boot2docker
-cd ~/.boot2docker
 ```
 
 ### Installing boot2docker
@@ -30,7 +28,7 @@ And then intall the new things
 ```bash
 mkdir ~/.boot2docker
 cd ~/.boot2docker
-wget https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile -O profile
+wget https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile -O profile # or curl 
 boot2docker init
 boot2docker up
 ```
