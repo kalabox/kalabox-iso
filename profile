@@ -41,19 +41,16 @@ SSHPort = 2022
 DockerPort = 2376
 
 # host-only network host IP
-HostIP = "192.168.59.3"
+HostIP = "1.3.3.1"
 
 # host only network network mask
 NetMask = [255, 255, 255, 0]
 
 # host-only network DHCP server IP
-DHCPIP = "192.168.59.99"
-
-# host-only network DHCP server enabled
-DHCPEnabled = true
+DHCPIP = "1.3.3.2"
 
 # host-only network IP range lower bound
-LowerIP = "192.168.59.103"
+LowerIP = "1.3.3.7"
 
 # host-only network IP range upper bound
-UpperIP = "192.168.59.254"
+UpperIP = "1.3.3.8"
