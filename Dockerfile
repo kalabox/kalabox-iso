@@ -10,7 +10,7 @@ FROM boot2docker/boot2docker
 RUN sed -i 's/: ${DOCKER_TLS:=auto}/: ${DOCKER_TLS:=}/g' /rootfs/usr/local/etc/init.d/docker
 
 # Add SkyDock dependencies
-RUN sed -i 's@docker -d@& --bip=172.17.42.1/16 --dns=172.17.42.1@g' /rootfs/usr/local/etc/init.d/docker
+RUN sed -i 's@docker -d@& --bip=172.17.42.1/16 --dns=172.17.42.1 --dns=8.8.8.8@g' /rootfs/usr/local/etc/init.d/docker
 
 # Make all the iso
 RUN /make_iso.sh
