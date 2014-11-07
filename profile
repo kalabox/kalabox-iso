@@ -32,7 +32,7 @@ ISOURL = "https://api.github.com/repos/kalabox/kalabox-boot2docker/releases"
 DiskSize = 20000
 
 # VM memory size in MB
-Memory = 2048
+Memory = 4096
 
 # host port forwarding to port 22 in the VM
 SSHPort = 2022
