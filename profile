@@ -41,16 +41,17 @@ SSHPort = 2022
 DockerPort = 2376
 
 # host-only network host IP
-HostIP = "1.3.3.1"
+HostIP = "10.13.37.1"
 
 # host only network network mask
 NetMask = [255, 255, 255, 0]
 
 # host-only network DHCP server IP
-DHCPIP = "1.3.3.2"
+DHCPIP = "10.13.37.2"
 
+# right now these IPs need to have the first three dots the same or Kalabox2 will
+# be very sad
 # host-only network IP range lower bound
-LowerIP = "1.3.3.7"
-
+LowerIP = "10.13.37.42"
 # host-only network IP range upper bound
-UpperIP = "1.3.3.8"
+UpperIP = "10.13.37.43"
