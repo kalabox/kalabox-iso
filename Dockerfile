@@ -6,8 +6,9 @@
 
 FROM boot2docker/boot2docker
 
-ENV DOCKER_TLS ""
-ENV EXTRA_ARGS "$EXTRA_ARGS --bip=172.17.42.1/16 --dns=172.17.42.1 --dns=8.8.8.8"
+RUN \
+  sed -i 's/: ${DOCKER_TLS:=auto}/: ${DOCKER_TLS:=}/g' $ROOTFS/usr/local/etc/init.d/docker && \
+  sed -i 's@docker -d@& --bip=172.17.42.1/16 --dns=172.17.42.1 --dns=8.8.8.8@g' $ROOTFS/usr/local/etc/init.d/docker
 
 # Make all the iso
 RUN /make_iso.sh
