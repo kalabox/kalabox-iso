@@ -26,7 +26,7 @@ ISOURL = "https://api.github.com/repos/kalabox/kalabox-boot2docker/releases"
 #ISOURL = "https://internal.corp.org/b2d.iso"
 
 # path to boot2docker ISO image
-# ISO = "/Users/sven/.boot2docker/boot2docker.iso"
+ISO = "/tmp/kalabox2.iso"
 
 # VM disk image size in MB
 DiskSize = 20000
