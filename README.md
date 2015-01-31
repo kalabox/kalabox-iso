@@ -31,7 +31,7 @@ cd ~/.boot2docker
 # Mac OS X
 curl -O https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile
 # Linux
-wget https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile -O profile # or curl 
+wget https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile -O profile # or curl
 boot2docker init
 boot2docker up
 ```
