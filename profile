@@ -26,19 +26,14 @@ ISOURL = "https://api.github.com/repos/kalabox/kalabox-boot2docker/releases"
 #ISOURL = "https://internal.corp.org/b2d.iso"
 
 # path to boot2docker ISO image
-ISO = "/tmp/kalabox2.iso"
+# This is bad because Boot2docker loads the iso into RAM so if no ISO, no BOOTO
+#ISO = "/tmp/kalabox2.iso"
 
 # VM disk image size in MB
 DiskSize = 20000
 
 # VM memory size in MB
 Memory = 4096
-
-# host port forwarding to port 22 in the VM
-SSHPort = 2022
-
-# host port forwarding to port 2376 in the VM
-DockerPort = 2376
 
 # host-only network host IP
 HostIP = "10.13.37.1"
