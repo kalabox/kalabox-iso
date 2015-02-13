@@ -38,6 +38,9 @@ Memory = 4096
 # host port forwarding to port 2376 in the VM
 DockerPort = 2376
 
+# host port forwarding to port 22 in the VM
+SSHPort = 2022
+
 # host-only network host IP
 HostIP = "10.13.37.1"
 
