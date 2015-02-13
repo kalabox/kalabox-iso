@@ -35,6 +35,9 @@ DiskSize = 20000
 # VM memory size in MB
 Memory = 4096
 
+# host port forwarding to port 2376 in the VM
+DockerPort = 2376
+
 # host-only network host IP
 HostIP = "10.13.37.1"
 
