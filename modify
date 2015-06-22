@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Do we still need --dns=8.8.8.8 as part of EXTRA_ARGS?
-#sed -i 's/: ${DOCKER_TLS:=auto}/: ${DOCKER_TLS:=}/g' $ROOTFS/usr/local/etc/init.d/docker && \
-#sed -i 's@docker -d@& --bip=172.17.42.1/16 --dns=172.17.42.1 --dns=8.8.8.8@g' $ROOTFS/usr/local/etc/init.d/docker
-DOCKER_TLS=no
-EXTRA_ARGS="--bip=172.17.42.1/16 --dns=172.17.42.1"
