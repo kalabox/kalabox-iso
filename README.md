@@ -1,39 +1,47 @@
-# Kalabox Boot2Docker
+# Kalabox Iso
 
-This contains the scaffolding to build a custom Boot2Docker image for use
-with Kalabox2.
+This contains the build scripts for the Kalabox ISO image. It is a custom Boot2Docker image.
 
 ## Getting started
 
-### Cleaning up
+You need to make sure you have installed Docker Machine. Replace with relevant version number.
 
-If you already have a B2D VM running you will want to get rid of the previous
-things.
+### Linux:
 
-```bash
-boot2docker destroy
-rm -rf ~/.boot2docker
-rm ~/.ssh/*boot2docker*
+```
+curl -L https://github.com/docker/machine/releases/download/v0.5.0/docker-machine_linux-amd64.zip >machine.zip && \
+unzip machine.zip && \
+rm machine.zip && \
+mv docker-machine* /usr/local/bin
 ```
 
-### Installing boot2docker
+### OSX:
 
-If you don't have B2D installed at all you should check out their win and
-osx installers. If you are on Linux then this will all seem silly to you.
+```
+$ curl -L https://github.com/docker/machine/releases/download/v0.5.0/docker-machine_darwin-amd64.zip >machine.zip && \
+unzip machine.zip && \
+rm machine.zip && \
+mv docker-machine* /usr/local/bin
+```
 
-### Initializing and starting the kalabox b2d iso
+### Windows (using Git Bash):
 
-And then intall the new things
+```
+$ curl -L https://github.com/docker/machine/releases/download/v0.5.0/docker-machine_windows-amd64.zip >machine.zip && \
+unzip machine.zip && \
+rm machine.zip && \
+mv docker-machine* /usr/local/bin
+```
+
+## Installing the Kalabox iso
+
 
 ```bash
-mkdir ~/.boot2docker
-cd ~/.boot2docker
-# Mac OS X
-curl -O https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile
-# Linux
-wget https://raw.githubusercontent.com/kalabox/kalabox-boot2docker/master/profile -O profile # or curl
-boot2docker init
-boot2docker up
+docker-machine create \
+  --driver virtualbox \
+  --virtualbox-boot2docker-url https://github.com/kalabox/iso/releases/download/v1.9.1/kalabox.iso \
+  --virtualbox-hostonly-cidr 10.13.37.1/24 \
+  Kalabox3
 ```
 
 ## Building the custom image
@@ -41,9 +49,15 @@ boot2docker up
 You will need to be in a docker-ready environment to do this.
 
 ```
-git clone git@github.com:kalabox/kalabox-boot2docker.git
-cd kalabox-boot2docker
-docker build -t kalabox/boot2docker .
-docker run --rm kalabox/boot2docker > boot2docker.iso
+git clone git@github.com:kalabox/kalabox-iso.git
+cd kalabox-iso
+docker build -t kalabox/iso .
+docker run --rm kalabox/iso > kalabox.iso
+```
+
+You can also pull the iso from the hub directly
+
+```
+docker pull kalabox/iso
 ```
 
