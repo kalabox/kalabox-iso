@@ -12,12 +12,7 @@ FROM boot2docker/boot2docker
 #
 RUN \
     echo "# Assign static ip addr" >> $ROOTFS/opt/bootsync.sh && \
-    echo "ifconfig eth1 10.13.37.42 netmask 255.255.255.0 broadcast 10.13.37.255 up" >> $ROOTFS/opt/bootsync.sh
-
-# Configure docker daemon
-# We don't need TLS support locally
-RUN \
-  sed -i 's/: ${DOCKER_TLS:=auto}/: ${DOCKER_TLS:=no}/g' $ROOTFS/usr/local/etc/init.d/docker
+    echo "ifconfig eth1 10.13.37.100 netmask 255.255.255.0 broadcast 10.13.37.255 up" >> $ROOTFS/opt/bootsync.sh
 
 # Need to manually add in support for vbox file share automounting on linux
 # until the following is merged
