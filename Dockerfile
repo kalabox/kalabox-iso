@@ -23,6 +23,7 @@ RUN \
   echo "echo \"nameserver 8.8.8.8\" >> /etc/resolv.conf" >> $ROOTFS/opt/bootsync.sh && \
   echo "echo \"nameserver 8.8.4.4\" >> /etc/resolv.conf" >> $ROOTFS/opt/bootsync.sh && \
   echo "echo \"options timeout:1 attempts:1\" >> /etc/resolv.conf" >> $ROOTFS/opt/bootsync.sh
+
 #
 # Need to manually add in support for vbox file share automounting on linux
 # until the following is merged
